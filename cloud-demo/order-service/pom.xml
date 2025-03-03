@@ -25,6 +25,10 @@
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -33,5 +37,20 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <resources>
+            <!-- 拷贝src/main/resources下所有的文件到classes下-->
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+                <targetPath>./</targetPath>
+            </resource>
+            <resource>
+           <!--拷贝mapper配置文件到classes下-->
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*Mapper.xml</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>
