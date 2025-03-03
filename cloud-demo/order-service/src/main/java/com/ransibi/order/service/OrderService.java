@@ -21,8 +21,9 @@ public class OrderService {
 
         Long userId = order.getUserId();
         String port = "8081";
-        String url = "http://127.0.0.1:" + port + "/user/" + userId;
-
+//        String url = "http://127.0.0.1:" + port + "/user/" + userId;
+        //从注册中心里拿
+        String url ="http://user-service/user/"+userId;
         //开始远程调用
         User resultUser = restTemplate.getForObject(url, User.class);
         order.setUser(resultUser);
