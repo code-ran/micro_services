@@ -1,20 +1,27 @@
 server:
   port: 8081
 spring:
-  application:
-    name: user-service
-
-  #nacos连接配置
-  cloud:
-    nacos:
-      server-addr: localhost:8848
+#  application:
+#    name: user-service
+#  profiles:
+#    active: dev #开发环境，这里是dev
 
   datasource:
     url: jdbc:mysql://localhost:3306/cloud_user?useSSL=false
     username: root
-    password: mysql0925
-#    password: 123456rsb
+    #    password: mysql0925
+    password: 123456rsb
     driver-class-name: com.mysql.jdbc.Driver
+
+  #nacos连接配置
+#  cloud:
+#    nacos:
+#      server-addr: localhost:8848
+#      config:
+#        file-extension: yaml # 文件后缀名
+#      #配置集群
+#      discovery:
+#        cluster-name: HZ # 集群名称
 
 #erueka连接配置
 #eureka:
@@ -30,6 +37,6 @@ mybatis:
 
 logging:
   level:
-    cn.itcast: debug
-  pattern:
-    dateformat: MM-dd HH:mm:ss:SSS
+    com.ransbi: debug
+#  pattern:
+#    dateformat: MM-dd HH:mm:ss:SSS
