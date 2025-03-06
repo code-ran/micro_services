@@ -24,10 +24,10 @@ spring:
 ribbon:
   eager-load:
     enabled: true
-    clients: userservice
+    clients: users-ervice
 
 #ribbon负责均衡规则配置
-userservice:
+users-ervice:
   ribbon:
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule # 负载均衡规则,同集群优先规则
 
