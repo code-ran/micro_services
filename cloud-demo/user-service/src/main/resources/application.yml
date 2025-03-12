@@ -9,8 +9,10 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/cloud_user?useSSL=false
     username: root
-    password: mysql0925
+#    password: mysql0925
 #    password: 123456rsb
+    #pro16
+    password: 1997rsb
     driver-class-name: com.mysql.jdbc.Driver
 
   #nacos连接配置
